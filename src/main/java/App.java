@@ -1,7 +1,8 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Scanner;
 import spark.ModelAndView;
-import java.util.ArrayList;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
@@ -21,47 +22,27 @@ public class App {
 
       String coinInput = request.queryParams("coinInput");
       Integer coinInputInt = Integer.parseInt(coinInput);
-      ArrayList<Object> coinList = new ArrayList<Object>();
-      coinList = App.CoinCount(coinInputInt);
-      String prettyResult = App.CoinPrintout(coinList);
+      String coinList = App.CoinCount(coinInputInt);
 
-      model.put("result", prettyResult);
+
+      model.put("result", coinList);
       model.put("template","templates/output.vtl");
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public static ArrayList<Object> CoinCount(Integer changeBack) {
-    ArrayList<Object> coinQuantity = new ArrayList<Object>();
-    Integer quarter = 25;
-    Integer dime = 10;
-    Integer nickel = 5;
-    Integer pennyQuantity = 0;
+  public static String CoinCount(int changeBack) {
+    int[] coins = {25, 10, 5, 1};
 
-    Integer quarterQuantity = changeBack / quarter;
-    Integer quarterTimes = quarterQuantity * quarter;
-    Integer remainingAmount = changeBack - quarterTimes;
-    coinQuantity.add("Quarters: " + quarterQuantity);
+    int[] list = new int[coins.length];
 
-    Integer dimeQuantity = remainingAmount / dime;
-    Integer dimeTimes = dimeQuantity * dime;
-    Integer remainingAmountDimes = remainingAmount - dimeTimes;
-    coinQuantity.add("Dimes: " + dimeQuantity);
-
-    Integer nickelQuantity = remainingAmountDimes / nickel;
-    Integer nickelTimes = nickelQuantity * nickel;
-    Integer remainingAmountNickel = remainingAmountDimes - nickelTimes;
-    coinQuantity.add("Nickels: " + nickelQuantity);
-    coinQuantity.add("Pennies: " + remainingAmountNickel);
-    return coinQuantity;
-  }
-  public static String CoinPrintout(ArrayList<Object> coinQuantity) {
-    String prettyResult = "";
-    for (Integer i = 0 ; i < coinQuantity.size() ; i++) {
-      prettyResult += "<li>" + coinQuantity.get(i) + "</li>";
+    for (int i=0; i <coins.length; i++) {
+      while (changeBack >= coins[i]) {
+        list[i]++;
+        changeBack -= coins[i];
+      }
     }
-    return prettyResult;
+    return "Quarters: " + list[0] + "<br>" + "Dimes: " + list[1] + "<br>" +  "Nickels: " + list[2] + "<br>" + "Pennies: " + list[3];
   }
-
 }
