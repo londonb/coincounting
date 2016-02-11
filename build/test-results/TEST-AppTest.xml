@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-11T19:21:53" hostname="epicodus-67.local" time="0.018">
+<testsuite name="AppTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-11T19:41:51" hostname="epicodus-67.local" time="0.018">
   <properties/>
   <testcase name="CoinCount_returnNumberFromUser_99" classname="AppTest" time="0.004"/>
-  <testcase name="CoinCount_returnNumberOfEachCoinFromUser_35" classname="AppTest" time="0.0"/>
+  <testcase name="CoinCount_returnNumberOfEachCoinFromUser_35" classname="AppTest" time="0.001"/>
   <testcase name="CoinCount_returnQuantityOfCoins_25" classname="AppTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
