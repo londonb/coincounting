@@ -21,11 +21,18 @@ public class AppTest extends FluentTest {
   //     goTo("http://localhost:4567/");
   //     assertThat(pageSource()).contains("");
   // }
+  @Test
+  public void CoinCount_returnQuantityOfCoins_25() {
+    App testCoin = new App();
+    Integer expectedReturn = 1;
+    assertEquals(expectedReturn, testCoin.CoinCount(25));
+  }
 
   @Test
   public void CoinCount_returnNumberFromUser_99() {
     App testCoin = new App();
-    Integer expectedReturn = 99;
+    Integer expectedReturn = 3;
     assertEquals(expectedReturn, testCoin.CoinCount(99));
   }
+
 }
