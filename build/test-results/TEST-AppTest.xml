@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-11T19:41:51" hostname="epicodus-67.local" time="0.018">
+<testsuite name="AppTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-11T19:46:45" hostname="epicodus-67.local" time="0.439">
   <properties/>
   <testcase name="CoinCount_returnNumberFromUser_99" classname="AppTest" time="0.004"/>
   <testcase name="CoinCount_returnNumberOfEachCoinFromUser_35" classname="AppTest" time="0.001"/>
+  <testcase name="rootTest" classname="AppTest" time="0.417"/>
   <testcase name="CoinCount_returnQuantityOfCoins_25" classname="AppTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[[Thread-4] INFO spark.webserver.SparkServer - == Spark has ignited ...
+[Thread-4] INFO spark.webserver.SparkServer - >> Listening on 0.0.0.0:4567
+[Thread-4] INFO org.eclipse.jetty.server.Server - jetty-9.0.2.v20130417
+[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@171e1d15{HTTP/1.1}{0.0.0.0:4567}
+Feb 11, 2016 11:46:45 AM com.gargoylesoftware.htmlunit.html.InputElementFactory createElementNS
+INFO: Bad input type: "number", creating a text input
+[Test worker] INFO spark.webserver.SparkServer - >>> Spark shutting down ...
+[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@49474dc2 by 
+[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@171e1d15{HTTP/1.1}{0.0.0.0:4567}
+[Test worker] INFO spark.webserver.SparkServer - done
+]]></system-err>
 </testsuite>
